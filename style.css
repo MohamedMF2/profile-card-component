@@ -60,13 +60,46 @@ body {
   background-size: 20px 20px;
   /*  */
 }
-.lights-control{
+.lights-control {
   display: flex;
-  align-items: center ;
+  align-items: center;
   gap: 1rem;
   position: absolute;
   top: 2rem;
 }
+
+.lights-label {
+  width: 4.2rem;
+  height: 2.2rem;
+  padding: 0.3rem 0.4rem;
+  border-radius: 1.5rem;
+  background-color: #000;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.lights-label::after {
+  content: "";
+  display: block;
+  width: 1.6rem;
+  height: 1.6rem;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+.lights-input {
+  display: none;
+}
+
+.lights-input:checked + .lights-label {
+  background-color: #fff;
+}
+
+.lights-input:checked + .lights-label::after {
+  transform: translateX(2.1rem);
+  background-color: blueviolet;
+}
+
 .card {
   display: flex;
   flex-direction: column;
@@ -78,14 +111,11 @@ body {
 }
 .top {
   min-height: 10rem;
-  background-color: #e5e5f7;
-  opacity: 0.8;
-  background-image: repeating-radial-gradient(
-      circle at 0 0,
-      transparent 0,
-      #e5e5f7 10px
-    ),
-    repeating-linear-gradient(#444cf755, #444cf7);
+  background-color: #108cff;
+  opacity: 1;
+  background-image:  radial-gradient(#200cca 0.75px, transparent 0.75px), radial-gradient(#200cca 0.75px, #108cff 0.75px);
+  background-size: 30px 30px;
+  background-position: 0 0,15px 15px;
 }
 
 .middle {
